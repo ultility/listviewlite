@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:id="@+id/imageView1"
+        android:layout_gravity="center_horizontal"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="take new picture"
+        android:id="@+id/button1"
+        android:layout_gravity="center"/>
+    <EditText
+        android:inputType="text"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity ="center"
+        android:hint="name"
+        android:id="@+id/name"/>
+        <EditText
+        android:inputType="number"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity ="center"
+        android:hint="grade1"
+        android:id="@+id/age"/>
+        <EditText
+        android:inputType="number"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity ="center"
+        android:hint="grade2"
+        android:id="@+id/grade1"/>
+        <EditText
+        android:inputType="number"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity ="center"
+        android:hint="grade3"
+        android:id="@+id/grade2"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="male"/>
+    <CheckBox
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/male"
+            android:checked="true"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female"/>
+    <CheckBox
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/female"/>
+        </LinearLayout>
+    <Button
+        android:layout_width ="200dp"
+        android:layout_height ="50dp"
+        android:layout_gravity="center"
+        android:text="save"
+        android:id="@+id/save"/>
+    
+</LinearLayout>
