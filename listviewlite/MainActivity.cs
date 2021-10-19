@@ -137,6 +137,8 @@ namespace listviewlite
             if (delete >= 0)
             {
                 list.RemoveAt(delete);
+                var db = new SQLiteConnection(Helper.Path());
+                db.Delete(delete);
                 apr.NotifyDataSetChanged();
             }
         }
