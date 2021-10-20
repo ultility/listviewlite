@@ -31,7 +31,7 @@ namespace listviewlite
         }
 
         [PrimaryKey, AutoIncrement, Column("_id")]
-        public int id { get; private set; }
+        public int id { get; set; }
         public string Name { get; set; }
         public int grade1 { get; set; }
         public int grade2 { get; set; }

@@ -103,12 +103,12 @@ namespace listviewlite
             if (pos == -1)
             {
                 db.Insert(edited);
-                MainActivity.list.Add(edited);
+                //MainActivity.list.Add(edited);
             }
             else
             {
                 db.Update(edited);
-                MainActivity.list[pos] = edited;
+                //MainActivity.list[pos] = edited;
             }
             Finish();
         }

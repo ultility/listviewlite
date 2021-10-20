@@ -40,6 +40,10 @@ namespace listviewlite
             femalepic = BitmapFactory.DecodeResource(Resources, Resources.GetIdentifier("female", "drawable", PackageName));
             var db = new SQLiteConnection(Helper.Path());
             db.CreateTable<Student>();
+            if (GetAllStudents().Count == 0)
+            {
+                db.Insert(new Student("nadav nimron", 100, 100, 0, Helper.BitmapToBase64(malepic)));
+            }
             list = GetAllStudents();
             Toast.MakeText(this, "" + list.Count, ToastLength.Long).Show();
             SetContentView(Resource.Layout.activity_main);
@@ -123,6 +127,7 @@ namespace listviewlite
         private void Lv_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             AlertDialog.Builder build = new AlertDialog.Builder(this);
+            delete = e.Position;
             build.SetMessage("are you sure you want to delete?");
             build.SetPositiveButton("yes", agree);
             build.SetNegativeButton("no", disagree);
@@ -138,7 +143,7 @@ namespace listviewlite
             {
                 list.RemoveAt(delete);
                 var db = new SQLiteConnection(Helper.Path());
-                db.Delete(delete);
+                db.Delete<Student>(GetAllStudents()[delete].id);
                 apr.NotifyDataSetChanged();
             }
         }
@@ -170,7 +175,7 @@ namespace listviewlite
             {
                 pic = femalepic;
             }
-            list.Add(new Student(name.Text, age, halfone, halftwo, Helper.BitmapToBase64(pic)));
+            //list.Add(new Student(name.Text, age, halfone, halftwo, Helper.BitmapToBase64(pic)));
             var db = new SQLiteConnection(Helper.Path());
             db.Insert(list[list.Count - 1]);
             this.name.Text = "";
@@ -192,6 +197,10 @@ namespace listviewlite
                 {
                     StudentList.Add(item);
                 }
+            }
+            if (apr != null)
+            {
+                apr.objects = StudentList;
             }
             return StudentList;
         }
